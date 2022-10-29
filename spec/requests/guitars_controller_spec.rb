@@ -34,7 +34,7 @@ RSpec.describe "Guitar CRUD", :type => :request do
     it 'renders all guitars on index' do 
       get '/guitars', :headers => headers
       expect(response.status).to eql(200)
-      expect(JSON.parse(response.body).length).to be > 0
+      expect(response.body.include? Guitar.first.name).to be_truthy
     end
     it 'creates a guitar' do
       post '/api/guitars', :params => { :guitar => { :name => "a name", :price => 2000, :description => "a description", :year => 2012}}, :headers => headers

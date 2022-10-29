@@ -1,14 +1,15 @@
 <p style="color: green"><%= notice %></p>
+<div class="flex-col prose">
+  <h1>Guitars</h1>
 
-<h1>Guitars</h1>
+  <div id="guitars">
+    <% @guitars.each do |guitar| %>
+      <%= render guitar %>
+      <p>
+        <%= link_to "Show this guitar", guitar %>
+      </p>
+    <% end %>
+  </div>
 
-<div id="guitars">
-  <% @guitars.each do |guitar| %>
-    <%= render guitar %>
-    <p>
-      <%= link_to "Show this guitar", guitar %>
-    </p>
-  <% end %>
+  <%= link_to "New guitar", new_guitar_path %>
 </div>
-
-<%= link_to "New guitar", new_guitar_path %>
