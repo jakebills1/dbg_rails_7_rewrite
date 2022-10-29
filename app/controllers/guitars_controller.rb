@@ -1,6 +1,6 @@
 class GuitarsController < ApplicationController
   # before_action :authenticate_user!, only: [:create, :update, :destroy]
-  before_action :set_guitar, only: [:show, :destroy, :update]
+  before_action :set_guitar, only: [:show, :destroy, :update, :edit]
   before_action :set_guitars, only: :index
   def index
     respond_to do |format|
@@ -16,28 +16,44 @@ class GuitarsController < ApplicationController
     end
   end
 
-  # TODO: add new
+  def new
+    # doesn't need json
+    @guitar = Guitar.new
+  end
 
-  def create # add html
-    guitar = Guitar.new(guitar_params)
-    if guitar.save
-      render json: guitar
-    else
-      render json: guitar.errors
+  def create
+    @guitar = Guitar.new(guitar_params)
+    respond_to do |format|
+      if @guitar.save
+        format.html { redirect_to @guitar }
+        format.json { render json: @guitar}
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @guitar.errors }
+      end
     end
   end
 
-  def update # add html
-    if @guitar.update(guitar_params)
-      render json: @guitar
-    else
-      render json: @guitar.errors
+  def edit; end
+
+  def update
+    respond_to do |format|
+      if @guitar.update(guitar_params)
+        format.html { redirect_to @guitar, notice: "Guitar updated!" }
+        format.json { render json: @guitar }
+      else
+        format.html { render :edit }
+        format.json { render json: @guitar.errors }
+      end
     end
   end
 
-  def destroy # add html
+  def destroy
     @guitar.destroy 
-    render json: { message: "deleted"}
+    respond_to do |format|
+      format.html { redirect_to guitars_url, notice: "Guitar deleted!" }
+      format.json { render json: { message: "deleted"} }
+    end
   end
   
   private
