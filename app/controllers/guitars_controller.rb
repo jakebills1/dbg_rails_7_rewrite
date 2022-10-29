@@ -16,7 +16,9 @@ class GuitarsController < ApplicationController
     end
   end
 
-  def create
+  # TODO: add new
+
+  def create # add html
     guitar = Guitar.new(guitar_params)
     if guitar.save
       render json: guitar
@@ -25,7 +27,7 @@ class GuitarsController < ApplicationController
     end
   end
 
-  def update
+  def update # add html
     if @guitar.update(guitar_params)
       render json: @guitar
     else
@@ -33,7 +35,7 @@ class GuitarsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy # add html
     @guitar.destroy 
     render json: { message: "deleted"}
   end

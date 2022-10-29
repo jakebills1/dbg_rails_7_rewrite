@@ -78,3 +78,5 @@ gem "faker", "~> 2.23", :groups => [:development, :test]
 gem "database_cleaner-active_record", "~> 2.0", :group => :test
 
 gem "pry", "~> 0.14.1", :group => :development
+
+gem "tailwindcss-rails", "~> 2.0"
