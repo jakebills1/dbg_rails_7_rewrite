@@ -2,7 +2,7 @@ class Api::GuitarsController < ApplicationController
   # before_action :authenticate_user!, only: [:create, :update, :destroy]
   before_action :set_guitar, only: [:destroy, :update]
   def index
-    render json: Guitar.all#.to_json(:include => :pictures)
+    render json: Guitar.all
   end
 
   def create

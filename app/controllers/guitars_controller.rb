@@ -1,5 +1,4 @@
 class GuitarsController < ApplicationController
-  # before_action :authenticate_user!, only: [:create, :update, :destroy]
   before_action :set_guitar, only: [:show, :destroy, :update, :edit]
   before_action :set_guitars, only: :index
   def index
@@ -64,6 +63,6 @@ class GuitarsController < ApplicationController
       @guitars = Guitar.all
     end
     def guitar_params
-      params.require(:guitar).permit(:name, :price, :description, :year)
+      params.require(:guitar).permit(:name, :price, :description, :year, images: [])
     end
 end
