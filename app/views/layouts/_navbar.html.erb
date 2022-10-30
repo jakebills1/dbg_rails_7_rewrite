@@ -4,9 +4,9 @@
 
     <nav class="ml-10 mt-2.5">
       <ul>
-        <li class="inline"><%= link_to 'Home', root_path %></li>
+        <li class="<%= class_names('inline', { 'bg-black/[0.05]': controller.action_name == 'home' })%>"><%= link_to 'Home', root_path %></li>
         <li class="inline"><%= link_to 'Gallery', '/gallery' %></li>
-        <li class="inline"><%= link_to 'Contact', contact_path %></li>
+        <li class="<%= class_names('inline', { 'bg-black/[0.05]': controller.action_name == 'contact' })%>"><%= link_to 'Contact', contact_path %></li>
       </ul>
     </nav>
   </div>
