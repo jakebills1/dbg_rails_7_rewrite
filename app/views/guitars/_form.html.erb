@@ -24,13 +24,14 @@
   </div>
    <div>
     <%= form.label :description, "Description:" %>
-    <%= form.text_field :description %>
+    <%= form.rich_text_area :description %>
   </div>
   <div>
     <%= form.label :images, "Upload #{controller.action_name == "edit" ? "New Images" : "Images"}" %>
     <%= form.file_field :images, multiple: true %>
   </div>
   <% if controller.action_name == 'edit' %>
+
     <div class="flex flex-row">
       <% guitar.images.each do |image| %>
         <div id="<%= dom_id image %>" class="flex flex-row">
