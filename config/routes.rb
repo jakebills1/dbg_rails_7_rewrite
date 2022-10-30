@@ -7,4 +7,7 @@ Rails.application.routes.draw do
     resources :guitars
   end
   resources :guitars
+  scope :active_storage, module: :active_storage, as: :active_storage do
+    resources :attachments, only: [:destroy]
+  end
 end

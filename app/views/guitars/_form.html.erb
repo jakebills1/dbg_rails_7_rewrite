@@ -27,9 +27,21 @@
     <%= form.text_field :description %>
   </div>
   <div>
-    <%= form.label :images, "Upload Images" %>
+    <%= form.label :images, "Upload #{controller.action_name == "edit" ? "New Images" : "Images"}" %>
     <%= form.file_field :images, multiple: true %>
   </div>
+  <% if controller.action_name == 'edit' %>
+    <div class="flex flex-row">
+      <% guitar.images.each do |image| %>
+        <div id="<%= dom_id image %>" class="flex flex-row">
+          <%= image_tag url_for(image.variant(:thumb)) %>
+          <%= link_to "X", active_storage_attachment_path(image),
+              class: "text-red-500",
+              data: { turbo: true, turbo_method: :delete, turbo_confirm: "Deleting images is not reversible. Make sure you want to do this" } %>
+        </div>
+      <% end  %>
+    </div>
+  <% end  %>
   <div>
     <%= form.submit 'Save', 
                     class: 'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' 
