@@ -1,0 +1,13 @@
+<header class="bg-nav-background">
+  <div class="flex flex-row">
+    <%= image_tag "transparent_logo.png", class: 'h-10 w-10' %>
+
+    <nav class="ml-10 mt-2.5">
+      <ul>
+        <li class="inline"><%= link_to 'Home', root_path %></li>
+        <li class="inline"><%= link_to 'Gallery', '/gallery' %></li>
+        <li class="inline"><%= link_to 'Contact', contact_path %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
