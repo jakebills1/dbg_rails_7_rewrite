@@ -1,4 +1,18 @@
-<div>
-  <h1 class="font-bold text-4xl">StaticPages#contact</h1>
-  <p>Find me in app/views/static_pages/contact.html.erb</p>
+<div class="bg-secondary-background container mx-auto">
+  <p style="color: green"><%= notice %></p>
+  <div class="px-4">
+    <div>
+      <h1 class="font-bold text-3xl">For more information:</h1>
+      <address>
+        Phone: <%= link_to '(801) 382-7362', 'tel:801-382-7362' %>
+        <br />
+        <%= mail_to 'jdanbills+contact@gmail.com', 'Email us' %>
+      </address>
+    </div>
+    <div>
+      <h1 class="font-bold text-3xl">Send us a message:</h1>
+      <%= render 'contact_form' %>
+    </div>
+  </div>
 </div>
+  
