@@ -1,0 +1,18 @@
+<div class="bg-secondary-background container mx-auto">
+  <p style="color: green"><%= notice %></p>
+  <div class="px-4">
+    <div>
+      <h1 class="font-bold text-3xl">Available Guitars For Sale</h1>
+    </div>
+    <div id="guitars">
+      <% @guitars.each_with_index do |guitar, index| %>
+        <%= render guitar %>
+        <% if index != @guitars.length - 1 %>
+          <hr class="bg-black" />
+        <% end %>
+      <% end %>
+      
+    </div>
+  </div>
+</div>
+  
