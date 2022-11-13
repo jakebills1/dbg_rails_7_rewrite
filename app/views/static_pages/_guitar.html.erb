@@ -1,9 +1,0 @@
-<div id="<%= dom_id guitar %>" class="prose">
-  <h2><%= guitar.name %> | <%= guitar.year %></h2>
-  <p><%= guitar.description %></p>
-  <div class="flex flex-row">
-    <% guitar.images.each do |image| %>
-      <%= image_tag url_for(image.variant(:thumb)) %>
-    <% end  %>
-  </div>
-</div>

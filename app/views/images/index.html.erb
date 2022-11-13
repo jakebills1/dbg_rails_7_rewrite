@@ -1,0 +1,5 @@
+<%= turbo_frame_tag :image_gallery do %>
+  <% @guitar.images.each do |image| %>
+    <%= image_tag image, class: "object-contain rounded-xl px-6 h-full mx-auto max-h-screen" %>
+  <% end %>
+<% end %>

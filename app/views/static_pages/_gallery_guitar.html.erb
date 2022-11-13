@@ -1,0 +1,17 @@
+<div id="<%= dom_id guitar %>" class="prose">
+  <h2><%= guitar.name %></h2>
+  <p><%= number_to_currency guitar.price %></p>
+  <p><%= guitar.description %></p>
+  <p><%= guitar.year %></p>
+  <div class="flex flex-row">
+    <% guitar.images.each do |image| %>
+      <%= image_tag url_for(image.variant(:thumb)), 
+                    class: "hover:opacity-75", 
+                    data: { 
+                      action: "click->lightbox#handleOpen" ,
+                      lightbox_url_param: guitar_images_path(guitar)
+                    } 
+      %>
+    <% end  %>
+  </div>
+</div>

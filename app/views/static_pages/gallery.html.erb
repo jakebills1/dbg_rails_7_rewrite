@@ -4,14 +4,14 @@
     <div>
       <h1 class="font-bold text-3xl">Available Guitars For Sale</h1>
     </div>
+    <%= render 'modal' %>
     <div id="guitars">
       <% @guitars.each_with_index do |guitar, index| %>
-        <%= render guitar %>
+        <%= render 'gallery_guitar', guitar: guitar %>
         <% if index != @guitars.length - 1 %>
           <hr class="bg-black" />
         <% end %>
       <% end %>
-      
     </div>
   </div>
 </div>
