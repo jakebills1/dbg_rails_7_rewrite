@@ -23,4 +23,3 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  url: <%= ENV.fetch('DATABASE_URL') %>
