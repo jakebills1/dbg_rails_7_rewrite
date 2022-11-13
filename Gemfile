@@ -83,3 +83,7 @@ gem "tailwindcss-rails", "~> 2.0"
 gem "image_processing", "~> 1.12"
  
 gem 'dotenv-rails', groups: [:development, :test]
+
+group :production do
+  gem 'pg'
+end
