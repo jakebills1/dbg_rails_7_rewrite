@@ -1,4 +1,4 @@
-<%= form_with(model: guitar) do |form| %>
+<%= form_with model: [:admin, guitar] do |form| %>
   <% if guitar.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(guitar.errors.count, "error") %> prohibited this guitar from being saved:</h2>

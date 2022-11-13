@@ -4,11 +4,11 @@
   <%= render @guitar %>
 
   <div class="prose">
-    <%= link_to "Edit this guitar", edit_guitar_path(@guitar) %> |
-    <%= link_to "Back to guitars", guitars_path %>
+    <%= link_to "Edit this guitar", edit_admin_guitar_path(@guitar) %> |
+    <%= link_to "Back to guitars", admin_guitars_path %>
 
     <%= button_to "Destroy this guitar", 
-                  @guitar, 
+                  admin_guitar_path(@guitar), 
                   method: :delete, 
                   class: 'bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded' 
     %>

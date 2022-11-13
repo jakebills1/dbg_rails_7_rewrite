@@ -14,8 +14,10 @@
 
   <body class="bg-main-background" data-controller="lightbox">
     <%= render "layouts/navbar" %>
-    <main class="container mx-auto px-5 flex">
-      <%= yield %>
-    </main>
+    <div style="min-height: 100vh;" class="bg-secondary-background container mx-auto">
+      <main class="container mx-auto px-5 flex">
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>

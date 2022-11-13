@@ -1,4 +1,4 @@
-<div class="flex-col prose">
+<div class="flex-col prose ">
   <p style="color: green"><%= notice %></p>
 
   <h1>Guitars</h1>
@@ -7,10 +7,10 @@
     <% @guitars.each do |guitar| %>
       <%= render guitar %>
       <p>
-        <%= link_to "Show this guitar", guitar %>
+        <%= link_to "Show this guitar", [:admin, guitar] %>
       </p>
     <% end %>
   </div>
 
-  <%= link_to "New guitar", new_guitar_path %>
+  <%= link_to "New guitar", new_admin_guitar_path %>
 </div>

@@ -1,6 +1,8 @@
-class GuitarsController < ApplicationController
+class Admin::GuitarsController < ApplicationController
   before_action :set_guitar, only: [:show, :destroy, :update, :edit]
   before_action :set_guitars, only: :index
+  http_basic_authenticate_with name: "dbg_admin", password: "password" # todo move to manage via ENV
+
   def index
     respond_to do |format|
       format.html
@@ -24,7 +26,7 @@ class GuitarsController < ApplicationController
     @guitar = Guitar.new(guitar_params)
     respond_to do |format|
       if @guitar.save
-        format.html { redirect_to @guitar }
+        format.html { redirect_to [:admin, @guitar] }
         format.json { render json: @guitar}
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +40,7 @@ class GuitarsController < ApplicationController
   def update
     respond_to do |format|
       if @guitar.update(guitar_params)
-        format.html { redirect_to @guitar, notice: "Guitar updated!" }
+        format.html { redirect_to [:admin, @guitar], notice: "Guitar updated!" }
         format.json { render json: @guitar }
       else
         format.html { render :edit }
@@ -50,7 +52,7 @@ class GuitarsController < ApplicationController
   def destroy
     @guitar.destroy 
     respond_to do |format|
-      format.html { redirect_to guitars_url, notice: "Guitar deleted!" }
+      format.html { redirect_to admin_guitars_url, notice: "Guitar deleted!" }
       format.json { render json: { message: "deleted"} }
     end
   end

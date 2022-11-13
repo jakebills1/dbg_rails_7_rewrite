@@ -9,7 +9,7 @@
                     class: "hover:opacity-75", 
                     data: { 
                       action: "click->lightbox#handleOpen" ,
-                      lightbox_url_param: guitar_images_path(guitar),
+                      lightbox_url_param: "guitars/#{guitar.id}/images",
                       lightbox_key_param: image.key
                     } 
       %>
