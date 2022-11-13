@@ -88,3 +88,4 @@ gem 'dotenv-rails', groups: [:development, :test]
 group :production do
   gem 'pg'
   end
+gem "aws-sdk-s3", "~> 1.117"
