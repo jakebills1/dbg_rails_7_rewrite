@@ -1,7 +1,7 @@
 class Admin::GuitarsController < ApplicationController
   before_action :set_guitar, only: [:show, :destroy, :update, :edit]
   before_action :set_guitars, only: :index
-  http_basic_authenticate_with name: "dbg_admin", password: "password" # todo move to manage via ENV
+  http_basic_authenticate_with name: ENV['ADMIN_NAME'], password: Rails.env.test? ? 'password' : ENV['ADMIN_PASSWORD']
 
   def index
     respond_to do |format|

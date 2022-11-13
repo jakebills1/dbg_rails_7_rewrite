@@ -81,3 +81,5 @@ gem "pry", "~> 0.14.1", :group => [:development, :test]
 gem "tailwindcss-rails", "~> 2.0"
 
 gem "image_processing", "~> 1.12"
+ 
+gem 'dotenv-rails', groups: [:development, :test]

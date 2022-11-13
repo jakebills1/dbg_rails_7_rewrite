@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "Guitar CRUD", :type => :request do 
   let(:headers) do
     _headers = {}
-    user = 'dbg_admin'
-    pw = 'password' # TODO store in env
+    user = ENV['ADMIN_NAME']
+    pw = 'password'
     _headers['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(user,pw)
     _headers
   end
