@@ -4,7 +4,7 @@
       <div class="swiper-wrapper" data-action="lightbox:open@document->swiper#navigate">
         <% @guitar.images.each do |image| %>
           <div class="swiper-slide flex justify-center" data-key="<%= image.key %>">
-            <%= image_tag image, class: "object-contain rounded-xl px-6 h-full mx-auto max-h-screen" %>      
+            <%= image_tag cdn_for(image), class: "object-contain rounded-xl px-6 h-full mx-auto max-h-screen" %>      
           </div>
         <% end %>
       </div>

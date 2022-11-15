@@ -35,7 +35,7 @@
     <div class="flex flex-row">
       <% guitar.images.each do |image| %>
         <div id="<%= dom_id image %>" class="flex flex-row">
-          <%= image_tag url_for(image.variant(:thumb)) %>
+          <%= image_tag cdn_for(image.variant(:thumb)) %>
           <%= link_to "X", active_storage_attachment_path(image),
               class: "text-red-500",
               data: { turbo: true, turbo_method: :delete, turbo_confirm: "Deleting images is not reversible. Make sure you want to do this" } %>

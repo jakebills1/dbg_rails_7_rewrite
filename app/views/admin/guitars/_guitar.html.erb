@@ -5,7 +5,7 @@
   <p><%= guitar.year %></p>
   <div class="flex flex-row">
     <% guitar.images.each do |image| %>
-      <%= image_tag url_for(image.variant(:thumb)) %>
+      <%= image_tag cdn_for(image.variant(:thumb)) %>
     <% end  %>
   </div>
 </div>
