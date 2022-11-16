@@ -97,4 +97,10 @@ Rails.application.configure do
     # tell Cloudfront to cache a long time:
     'Cache-Control' => 'public, max-age=31536000'
   }
+  config.action_mailer.smtp_settings = {
+    address: ENV['MAILGUN_HOSTNAME'],
+    port: ENV['MAILGUN_PORT'],
+    user_name: ENV['MAILGUN_USERNAME'],
+    password: ENV['MAILGUN_PASSWORD']
+  }
 end

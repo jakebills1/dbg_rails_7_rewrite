@@ -87,5 +87,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 group :production do
   gem 'pg'
-  end
+end
 gem "aws-sdk-s3", "~> 1.117"
+# gem 'rest-client'
+gem 'faraday'
