@@ -1,24 +1,5 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To run on cloud 9:
+- clone
+- bundle (skip production if pg gem doesn't install)
+- change port in Procfile.dev to 8080
+- add cloud9 hostname to config.hosts in config/environments/development.rb
